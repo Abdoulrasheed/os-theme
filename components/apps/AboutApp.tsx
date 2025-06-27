@@ -57,7 +57,6 @@ export default function AboutApp() {
               <li>• 🎖️ Leadership Award - Zarttech</li>
               <li>• 🚀 Built scalable systems serving thousands of users</li>
               <li>• 👥 Mentored 10+ junior developers</li>
-              <li>• 🔧 Contributed to CPython internals</li>
             </ul>
           </section>
         </div>
