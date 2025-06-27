@@ -53,10 +53,8 @@ export default function AboutApp() {
           <section>
             <h2 className="text-xl font-semibold mb-2 text-green-400">$ ls achievements/</h2>
             <ul className="text-gray-300 space-y-2 text-sm">
-              <li>• 🏆 Most Valuable Person (MVP) - Zarttech</li>
-              <li>• 🎖️ Leadership Award - Zarttech</li>
               <li>• 🚀 Built scalable systems serving thousands of users</li>
-              <li>• 👥 Mentored 10+ junior developers</li>
+              <li>• 👥 Mentored 50+ junior developers</li>
             </ul>
           </section>
         </div>
