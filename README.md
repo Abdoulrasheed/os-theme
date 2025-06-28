@@ -2,8 +2,6 @@
 
 A creative and interactive portfolio website that simulates a desktop operating system interface. Built with Next.js, React, TypeScript, and Tailwind CSS.
 
-*Watch the full AbdullOS experience in action*
-
 <a href="./media/screen.mp4">
   <img src="./media/screen.gif" alt="AbdullOS Demo" width="1000" />
 </a>
