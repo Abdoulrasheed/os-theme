@@ -4,7 +4,7 @@ A creative and interactive portfolio website that simulates a desktop operating 
 
 *Watch the full AbdullOS experience in action*
 
-![AbdullOS Demo](./media/screen.mp4)
+![AbdullOS Demo](./media/screen.gif)
 
 ## 🚀 Features
 
