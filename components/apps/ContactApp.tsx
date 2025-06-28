@@ -137,7 +137,7 @@ export default function ContactApp() {
               <span className="text-2xl">🐙</span>
               <div>
                 <p className="font-medium">GitHub</p>
-                <p className="text-gray-300">github.com/abdull</p>
+                <p className="text-gray-300">github.com/abdoulrasheed</p>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function ContactApp() {
                 <span className="text-green-400">$</span> ssh abdull@abdull.dev
               </div>
               <div className="bg-gray-800 p-2 rounded">
-                <span className="text-green-400">$</span> git clone github.com/abdull
+                <span className="text-green-400">$</span> git clone github.com/abdoulrasheed
               </div>
             </div>
           </div>
