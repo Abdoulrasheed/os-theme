@@ -145,7 +145,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Abdulrasheed Ibrahim**
 - Email: hello@abdull.dev
 - LinkedIn: [linkedin.com/in/abdoulrasheed](https://linkedin.com/in/abdoulrasheed)
-- GitHub: [github.com/abdull](https://github.com/abdull)
+- GitHub: [github.com/abdull](https://github.com/abdoulrasheed)
 - Portfolio: [abdull.dev](https://www.abdull.dev)
 
 ---
