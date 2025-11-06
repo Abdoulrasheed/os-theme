@@ -1,0 +1,370 @@
+/**
+ * Agent Tools
+ * Implements the 8 core tools for the portfolio agent
+ */
+
+import resumeData from "../knowledge/resume.json";
+import projectsData from "../knowledge/projects.json";
+import { openSourceTool, getOpenSourceContributions } from "./opensource";
+
+/**
+ * Portfolio Tools
+ * These tools allow the agent to access Abdul's professional information
+ */
+export function getContactInfo(): string {
+  const { personal } = resumeData;
+  return JSON.stringify({
+    name: personal.name,
+    email: personal.email,
+    linkedin: personal.linkedin,
+    github: personal.github,
+    location: personal.location,
+    message: "Feel free to reach out through any of these channels. I typically respond within 24 hours!"
+  }, null, 2);
+}
+
+/**
+ * Tool 2: Schedule Meeting
+ * Provides meeting scheduling information
+ */
+export function scheduleMeeting(topic?: string): string {
+  return JSON.stringify({
+    message: "I'd love to chat with you!",
+    calendly: "https://calendly.com/abdulrasheedibrahim47/30min",
+    suggestedTopics: topic ? [topic] : [
+      "Technical discussion about my projects",
+      "Career opportunities and collaboration",
+      "Mentoring and knowledge sharing",
+      "Consulting and contract work"
+    ],
+    availability: "Typically available Monday-Friday, 3 PM - 11 PM GMT",
+    note: "Please include a brief agenda when booking so I can prepare for our conversation!"
+  }, null, 2);
+}
+
+/**
+ * Tool 3: Showcase Portfolio
+ * Returns project highlights and key achievements
+ */
+export function showcasePortfolio(category?: string): string {
+  const { projects: projectList } = projectsData;
+  
+  let relevantProjects = projectList;
+  if (category) {
+    const cat = category.toLowerCase();
+    relevantProjects = projectList.filter((p: any) => 
+      p.technologies.some((t: any) => t.toLowerCase().includes(cat)) ||
+      p.name.toLowerCase().includes(cat) ||
+      p.description.toLowerCase().includes(cat)
+    );
+  }
+
+  return JSON.stringify({
+    message: "Here are some of my notable projects:",
+    projects: relevantProjects.map((p: any) => ({
+      name: p.name,
+      description: p.description,
+      technologies: p.technologies,
+      highlights: p.highlights,
+      status: p.status,
+      links: {
+        github: p.github,
+        demo: p.demo
+      }
+    })),
+    totalProjects: projectList.length,
+    openSourceContributions: projectsData.openSource
+  }, null, 2);
+}
+
+/**
+ * Tool 4: Retrieve Documents
+ * Provides access to resume and professional documents
+ */
+export function retrieveDocuments(documentType: "resume" | "cv" | "summary" = "summary"): string {
+  const { personal, skills, experience, education, achievements } = resumeData;
+
+  if (documentType === "summary") {
+    return JSON.stringify({
+      name: personal.name,
+      title: personal.title,
+      bio: personal.bio,
+      yearsOfExperience: personal.yearsOfExperience,
+      topSkills: skills.languages.slice(0, 5).map((s: any) => s.name),
+      achievements: achievements.slice(0, 3),
+      resumeDownload: "/resume.pdf", // Add actual resume PDF to /public folder
+      note: "This is a summary. Ask me for specific details about my experience, skills, or projects!"
+    }, null, 2);
+  }
+
+  return JSON.stringify({
+    personal,
+    skills,
+    experience,
+    education,
+    achievements,
+    resumeDownload: "/resume.pdf"
+  }, null, 2);
+}
+
+/**
+ * Tool 5: Assess Skills
+ * Provides detailed skills assessment and matching
+ */
+export function assessSkills(skillCategory?: string): string {
+  const { skills } = resumeData;
+  
+  if (skillCategory) {
+    return JSON.stringify({
+      message: "Here's my complete skill set:",
+      languages: skills.languages,
+      frameworks: skills.frameworks,
+      technologies: skills.technologies,
+      practices: skills.practices,
+      note: "Let me know if you're looking for specific skills and I'll provide a detailed match!"
+    }, null, 2);
+  }
+
+  // Match required skills with resume
+  const matches: any[] = [];
+  const allSkills = [
+    return JSON.stringify({
+    message: "Here's a comprehensive overview of my technical skills:",
+    allSkills: [
+    ...skills.languages.map((s: any) => ({ ...s, category: "language" })),
+    ...skills.frameworks.map((s: any) => ({ ...s, category: "framework" })),
+    ...skills.technologies.map((s: any) => ({ ...s, category: "technology" }))
+  ];
+
+  requiredSkills.forEach(required => {
+    const match = allSkills.find(s => 
+      s.name.toLowerCase().includes(required.toLowerCase()) ||
+      required.toLowerCase().includes(s.name.toLowerCase())
+    );
+    
+    if (match) {
+      matches.push({
+        skill: required,
+        proficiency: match.level,
+        yearsOfExperience: 'years' in match ? match.years : undefined,
+        category: match.category,
+        matched: true
+      });
+    } else {
+      matches.push({
+        skill: required,
+        matched: false,
+        note: "Not explicitly listed, but I'm a quick learner!"
+      });
+    }
+  });
+
+  const matchPercentage = (matches.filter(m => m.matched).length / requiredSkills.length) * 100;
+
+  return JSON.stringify({
+    message: `I match ${matchPercentage.toFixed(0)}% of the required skills!`,
+    matches,
+    matchPercentage,
+    additionalStrengths: skills.practices,
+    note: matchPercentage >= 70 
+      ? "Strong match! I'd love to discuss how my experience aligns with your needs."
+      : "While not a perfect match on paper, my diverse experience and quick learning ability could bring unique value to the role."
+  }, null, 2);
+}
+
+/**
+ * Tool 6: Get Project Details
+ * Deep dive into specific project
+ */
+export function getProjectDetails(projectName: string): string {
+  const project = projectsData.projects.find((p: any) =>
+    p.name.toLowerCase().includes(projectName.toLowerCase()) ||
+    p.id === projectName
+  );
+
+  if (!project) {
+    return JSON.stringify({
+      error: "Project not found",
+      availableProjects: projectsData.projects.map((p: any) => ({ id: p.id, name: p.name })),
+
+/**
+ * Tool 7: Get Work Experience
+ * Returns detailed work history and achievements
+ */
+export function getWorkExperience(): string {
+  const { experience, achievements, personal } = resumeData;
+  
+  return JSON.stringify({
+    message: `I have ${personal.yearsOfExperience}+ years of professional software engineering experience.`,
+    experience,
+    achievements,
+    expertise: [
+      "Building scalable backend systems",
+      "Full-stack web development",
+      "Mobile app development",
+      "System design and architecture",
+      "Team leadership and mentoring",
+      "Performance optimization"
+    ],
+    note: "Ask me about specific projects or technologies I've worked with!"
+  }, null, 2);
+}
+
+/**
+ * Tool 8: Check Availability
+ * Returns current availability status
+ */
+export function checkAvailability(): string {
+  const { availability } = resumeData;
+  
+  return JSON.stringify({
+    status: availability.status,
+    opportunityTypes: availability.types,
+    remotePreference: availability.remotePreference,
+    message: "I'm actively exploring new opportunities! Let's discuss how I can contribute to your team.",
+    nextSteps: [
+      "Tell me about the role or project",
+      "Schedule a call to discuss further",
+      "Review my portfolio and experience"
+    ]
+  }, null, 2);
+}
+
+// Tool definitions for OpenAI Agents SDK
+export const tools = [
+  {
+    type: "function" as const,
+    function: {
+      name: "get_contact_info",
+      description: "Get contact information for reaching out to Abdul. Use this when someone wants to connect, send an email, or get in touch.",
+      parameters: {
+        type: "object",
+        properties: {},
+        required: []
+      }
+    }
+  },
+  {
+    type: "function" as const,
+    function: {
+      name: "schedule_meeting",
+      description: "Provide meeting scheduling information. Use this when someone wants to book a call, schedule an interview, or set up a meeting.",
+      parameters: {
+        type: "object",
+        properties: {
+          topic: {
+            type: "string",
+            description: "Optional topic for the meeting"
+          }
+        },
+        required: []
+      }
+    }
+  },
+  {
+    type: "function" as const,
+    function: {
+      name: "showcase_portfolio",
+      description: "Show portfolio projects and achievements. Use this when someone asks about projects, work samples, or what Abdul has built.",
+      parameters: {
+        type: "object",
+        properties: {
+          category: {
+            type: "string",
+            description: "Optional category to filter projects (e.g., 'backend', 'mobile', 'AI', 'Next.js')"
+          }
+        },
+        required: []
+      }
+    }
+  },
+  {
+    type: "function" as const,
+    function: {
+      name: "retrieve_documents",
+      description: "Retrieve resume, CV, or professional summary. Use this when someone asks for a resume, CV, or detailed background.",
+      parameters: {
+        type: "object",
+        properties: {
+          documentType: {
+            type: "string",
+            enum: ["resume", "cv", "summary"],
+            description: "Type of document to retrieve. Default is 'summary'."
+          }
+        },
+        required: []
+      }
+    }
+  },
+  {
+    type: "function" as const,
+    function: {
+      name: "assess_skills",
+      description: "Assess skills and provide skill matching. Use this when someone asks about specific technical skills, proficiency levels, or skill matching for a role.",
+      parameters: {
+        type: "object",
+        properties: {
+          requiredSkills: {
+            type: "array",
+            items: { type: "string" },
+            description: "Optional array of required skills to match against"
+          }
+        },
+        required: []
+      }
+    }
+  },
+  {
+    type: "function" as const,
+    function: {
+      name: "get_project_details",
+      description: "Get detailed information about a specific project. Use this when someone wants to learn more about a particular project.",
+      parameters: {
+        type: "object",
+        properties: {
+          projectId: {
+            type: "string",
+            description: "Project ID or name to get details for"
+          }
+        },
+        required: ["projectId"]
+      }
+    }
+  },
+  {
+    type: "function" as const,
+    function: {
+      name: "get_work_experience",
+      description: "Get detailed work experience and professional history. Use this when someone asks about work history, career journey, or professional experience.",
+      parameters: {
+        type: "object",
+        properties: {},
+        required: []
+      }
+    }
+  },
+  {
+    type: "function" as const,
+    function: {
+      name: "check_availability",
+      description: "Check current availability for work opportunities. Use this when someone asks if Abdul is looking for work, available for hire, or open to opportunities.",
+      parameters: {
+        type: "object",
+        properties: {},
+        required: []
+      }
+    }
+  }
+];
+
+// Tool executor mapping
+export const toolExecutors: Record<string, Function> = {
+  get_contact_info: getContactInfo,
+  schedule_meeting: scheduleMeeting,
+  showcase_portfolio: showcasePortfolio,
+  retrieve_documents: retrieveDocuments,
+  assess_skills: assessSkills,
+  get_project_details: getProjectDetails,
+  get_work_experience: getWorkExperience,
+  check_availability: checkAvailability
+};

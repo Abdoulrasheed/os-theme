@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import Taskbar from "./Taskbar"
 import Window from "./Window"
 import { useWindowStore } from "@/lib/WindowContext"
@@ -7,7 +8,15 @@ import { useWindowStore } from "@/lib/WindowContext"
 export default function Desktop() {
   const { windows, openWindow } = useWindowStore()
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      openWindow("chat")
+    }, 500)
+    return () => clearTimeout(timer)
+  }, [])
+
   const desktopApps = [
+    { id: "chat", name: "Chat Me", icon: "💬", color: "bg-gradient-to-br from-blue-500 to-purple-600" },
     { id: "about", name: "About Me", icon: "👨‍💻", color: "bg-blue-500" },
     { id: "projects", name: "Projects", icon: "🚀", color: "bg-green-500" },
     { id: "terminal", name: "Terminal", icon: "⚡", color: "bg-gray-800" },

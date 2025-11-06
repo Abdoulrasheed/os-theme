@@ -36,6 +36,7 @@ export function WindowProvider({ children }: { children: React.ReactNode }) {
 
   const getWindowConfig = (type: string) => {
     const configs: Record<string, { title: string; component: string; width: number; height: number }> = {
+      chat: { title: "Chat Me", component: "ChatApp", width: 1200, height: 700 },
       about: { title: "About Me", component: "AboutApp", width: 700, height: 500 },
       projects: { title: "Projects", component: "ProjectsApp", width: 900, height: 600 },
       terminal: { title: "Terminal", component: "TerminalApp", width: 800, height: 500 },
@@ -60,13 +61,18 @@ export function WindowProvider({ children }: { children: React.ReactNode }) {
 
         const config = getWindowConfig(type)
         const newZIndex = zIndexCounter + 1
+        
+        // Center window on screen
+        const centerX = Math.max(0, (window.innerWidth - config.width) / 2)
+        const centerY = Math.max(0, (window.innerHeight - config.height) / 2)
+        
         const newWindow: WindowType = {
           id: `${type}-${Date.now()}`,
           type,
           title: config.title,
           component: config.component,
-          x: 100 + prev.length * 30,
-          y: 100 + prev.length * 30,
+          x: centerX,
+          y: centerY,
           width: config.width,
           height: config.height,
           zIndex: newZIndex,

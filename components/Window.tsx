@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import type { WindowType } from "@/lib/WindowContext"
 import { useWindowStore } from "@/lib/WindowContext"
+import ChatApp from "./apps/ChatApp"
 import AboutApp from "./apps/AboutApp"
 import ProjectsApp from "./apps/ProjectsApp"
 import TerminalApp from "./apps/TerminalApp"
@@ -18,6 +19,7 @@ interface WindowProps {
 }
 
 const components = {
+  ChatApp,
   AboutApp,
   ProjectsApp,
   TerminalApp,

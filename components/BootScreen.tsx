@@ -8,20 +8,20 @@ export default function BootScreen() {
   const [showCursor, setShowCursor] = useState(true)
 
   const messages = [
-    "AbdullOS v2.0 - Professional Developer Edition",
+    "AbdullOS v2.0 - AI-Powered Portfolio",
     "",
-    "Loading AbdullOS kernel v2.0...",
-    "Initializing hardware drivers...",
-    "Mounting /home/abdull...",
-    "Loading user profile...",
-    "Starting network services...",
-    "Initializing graphics subsystem...",
-    "Loading desktop environment...",
-    "Starting application manager...",
+    "Initializing neural networks...",
+    "Loading agent orchestration layer...",
+    "Activating LangGraph reasoning engine...",
+    "Deploying autonomous agents...",
+    "Establishing vector memory stores...",
+    "Configuring multi-agent workflows...",
+    "Syncing knowledge graphs...",
+    "Preparing interactive interface...",
     "",
-    "✅ AbdullOS ready! Welcome back, Abdull.",
+    "All systems operational. Agents standing by.",
     "",
-    "Press any key to continue...",
+    "Entering workspace...",
   ]
 
   useEffect(() => {
@@ -34,23 +34,22 @@ export default function BootScreen() {
 
         for (let i = 0; i <= message.length; i++) {
           setCurrentMessage(message.slice(0, i))
-          await new Promise((resolve) => setTimeout(resolve, 30))
+          await new Promise((resolve) => setTimeout(resolve, 1))
         }
 
         setBootMessages((prev) => [...prev, message])
         messageIndex++
 
-        await new Promise((resolve) => setTimeout(resolve, 200))
+        await new Promise((resolve) => setTimeout(resolve, 5))
         typeMessage()
       }
     }
 
-    // Cursor blink effect
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev)
     }, 500)
 
-    const startTimer = setTimeout(typeMessage, 1000)
+    const startTimer = setTimeout(typeMessage, 10)
 
     return () => {
       clearInterval(cursorInterval)

@@ -9,10 +9,9 @@ export default function AbdullOS() {
   const [isBooted, setIsBooted] = useState(false)
 
   useEffect(() => {
-    // Start boot sequence
     const bootTimer = setTimeout(() => {
       setIsBooted(true)
-    }, 8000) // 8 seconds for boot sequence
+    }, 3000)
 
     return () => clearTimeout(bootTimer)
   }, [])

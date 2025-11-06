@@ -22,6 +22,7 @@ export function useWindowStore() {
 
   const getWindowConfig = (type: string) => {
     const configs: Record<string, { title: string; component: string; width: number; height: number }> = {
+      chat: { title: "Chat with Abdul", component: "ChatApp", width: 800, height: 650 },
       about: { title: "About Me", component: "AboutApp", width: 700, height: 500 },
       projects: { title: "Projects", component: "ProjectsApp", width: 900, height: 600 },
       terminal: { title: "Terminal", component: "TerminalApp", width: 800, height: 500 },

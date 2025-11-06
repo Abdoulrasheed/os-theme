@@ -1,0 +1,164 @@
+{
+  "projects": [
+    {
+      "id": "portfolio-os",
+      "name": "OS-themed Portfolio",
+      "description": "Interactive portfolio website with an operating system theme, featuring draggable windows, a chat interface powered by AI agents, and smooth animations.",
+      "technologies": ["Next.js", "TypeScript", "React", "Framer Motion", "Tailwind CSS", "OpenAI SDK", "Gemini"],
+      "highlights": [
+        "Built custom window management system with drag, resize, and minimize",
+        "Integrated AI agent for real-time portfolio interaction",
+        "Implemented first-person voice AI representative",
+        "Created beautiful animations and transitions"
+      ],
+      "status": "In Progress",
+      "github": "https://github.com/abdoulrasheed/portfolio",
+      "demo": "https://www.abdull.dev"
+    },
+    {
+      "id": "convexity-projects",
+      "name": "Convexity Technologies Projects",
+      "description": "Leading development of CHATS, cNGN, StableRail, and Scrybit projects using modern technologies.",
+      "technologies": ["Python", "Rust", "Axum", "Soroban", "Firebase", "C", "AWS", "Django", "PostgreSQL", "Kafka", "Redis"],
+      "highlights": [
+        "Leading engineering department",
+        "Building scalable blockchain and financial technology solutions",
+        "Implementing microservices architecture"
+      ],
+      "status": "Active",
+      "company": "Convexity Technologies Limited"
+    },
+    {
+      "id": "foundry-awe",
+      "name": "Foundry Agent Web Engine (AWE)",
+      "description": "Web engine for rendering static sites, particularly LinkedIn and Salesforce, using redis-based pooling system.",
+      "technologies": ["Python", "Flask", "PostgreSQL", "AWS", "GCP", "Redis", "Web Scraping"],
+      "highlights": [
+        "Implemented LinkedIn integration with redis pooling",
+        "Built Salesforce integration using Scratch Orgs",
+        "Developed PyPI package for developer integration",
+        "Optimized rendering performance with caching"
+      ],
+      "status": "Completed",
+      "company": "FoundryAI"
+    },
+    {
+      "id": "myhives-backend",
+      "name": "MyHives Core Services",
+      "description": "Designed and led development of core backend architecture, microservices, and full cloud infrastructure.",
+      "technologies": ["Python", "Django", "Django Ninja", "AWS", "CDK", "Terraform", "ECS", "React", "React Native", "Rust", "Axum"],
+      "highlights": [
+        "Built microservices architecture from scratch",
+        "Implemented full AWS cloud infrastructure using CDK and Terraform",
+        "Set up comprehensive networking with VPCs, load balancing, route tables",
+        "Scaled to support multiple tenants"
+      ],
+      "status": "Completed",
+      "company": "MyHives B.V."
+    },
+    {
+      "id": "isofy-nac",
+      "name": "Isofy NAC System and Portal",
+      "description": "Network Access Control system with portal for managing network devices and user access.",
+      "technologies": ["Django", "Python", "GraphQL", "Juniper", "Cisco Meraki", "React", "AWS"],
+      "highlights": [
+        "Implemented remote NAC reboot functionality",
+        "Built roaming user support",
+        "Integrated with OfficeRND",
+        "Enhanced functionality and user experience"
+      ],
+      "status": "Completed",
+      "company": "Isofy"
+    },
+    {
+      "id": "zarttech-microservices",
+      "name": "Zarttech Critical Microservices",
+      "description": "Led development of critical microservices and software architecture for multiple projects.",
+      "technologies": ["Rust", "Python", "PostgreSQL", "AWS", "Axum", "Django", "NodeJS", "Redis", "Celery"],
+      "highlights": [
+        "Designed robust software architectures",
+        "Built scalable microservices",
+        "Implemented WebRTC and WebSocket communication systems",
+        "Set up real-time video conferencing with server-side recording"
+      ],
+      "status": "Completed",
+      "company": "Zarttech B.V."
+    },
+    {
+      "id": "kyc-mobile-app",
+      "name": "KYC Mobile Application",
+      "description": "Cross-platform mobile app for Know Your Customer verification with face detection and identification.",
+      "technologies": ["React Native", "AWS", "Firebase", "Azure", "Face Detection API"],
+      "highlights": [
+        "Built face detection and identification system",
+        "Deployed to both iOS and Android",
+        "Configured CI/CD pipelines for automated builds",
+        "Integrated with backend verification systems"
+      ],
+      "status": "Completed",
+      "company": "Zarttech B.V."
+    },
+    {
+      "id": "crypto-mining-backend",
+      "name": "Cryptocurrency Mining Backend",
+      "description": "Backend system supporting cryptocurrency mining rigs with blockchain transaction capabilities.",
+      "technologies": ["Django", "Channels", "React", "React Native", "Blockchain", "Web3", "Bitcoin", "Ethereum"],
+      "highlights": [
+        "Built system to create, sign, and broadcast Bitcoin and Ether transactions",
+        "Integrated with mining hardware",
+        "Implemented real-time monitoring and control",
+        "Used Django Channels for WebSocket communication"
+      ],
+      "status": "Completed",
+      "company": "AlphatechHub Integrated Services"
+    },
+    {
+      "id": "carilo-platform",
+      "name": "Carilo Bidding Platform",
+      "description": "Platform for package bidding with real-time notifications and cross-platform mobile app.",
+      "technologies": ["Django", "Django Channels", "React", "React Native", "Redux", "Expo"],
+      "highlights": [
+        "Built module for broadcasting new bids in real-time",
+        "Created iOS and Android mobile applications",
+        "Implemented landing page with React",
+        "Used WebSocket for real-time updates"
+      ],
+      "status": "Completed",
+      "company": "Carilo"
+    },
+    {
+      "id": "school-saas",
+      "name": "Multi-Tenant School Management SaaS",
+      "description": "Scalable SaaS solution for school management used by multiple schools in Nigeria.",
+      "technologies": ["Django", "Channels", "React", "Redux", "WebRTC", "WebSocket", "Redis", "RabbitMQ", "AWS"],
+      "highlights": [
+        "Built multi-tenant architecture supporting multiple schools",
+        "Scaled on AWS using ELBs, EC2s, and Lambdas",
+        "Implemented real-time features with WebRTC and WebSocket",
+        "Trained junior developers and IT students"
+      ],
+      "status": "Completed",
+      "company": "Bitpoint Limited"
+    }
+  ],
+  "openSource": [
+    {
+      "name": "Python (CPython) Contributions",
+      "description": "Active contributor to the Python Programming Language core project.",
+      "contributions": [
+        "Bug fixes and improvements",
+        "Code reviews",
+        "Community support"
+      ]
+    },
+    {
+      "name": "Various Open Source Projects",
+      "description": "Contributor to multiple open-source projects in the Python and JavaScript ecosystems.",
+      "contributions": [
+        "Bug fixes and feature additions",
+        "Documentation improvements",
+        "Code reviews and mentoring"
+      ]
+    }
+  ]
+}

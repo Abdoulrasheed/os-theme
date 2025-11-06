@@ -1,0 +1,233 @@
+{
+  "personal": {
+    "name": "Abdulrasheed Ibrahim (Abdul)",
+    "title": "Senior Software Engineer",
+    "location": "Abuja, Nigeria",
+    "email": "hello@abdull.dev",
+    "linkedin": "https://linkedin.com/in/abdoulrasheed",
+    "github": "https://github.com/abdoulrasheed",
+    "website": "https://www.abdull.dev",
+    "phone": "+2347033389645",
+    "yearsOfExperience": 10,
+    "bio": "Senior Software Engineer with 10+ years of experience building scalable systems and writing high-quality code in Python, Javascript, Typescript, and C. Strong background in system design, performance optimization, and modern software practices like TDD and Agile. Active Contributor to the Python Programming Language (Cpython)."
+  },
+  "skills": {
+    "languages": [
+      { "name": "Python", "level": "Senior", "years": 10 },
+      { "name": "C", "level": "Senior", "years": 8 },
+      { "name": "JavaScript", "level": "Senior", "years": 7 },
+      { "name": "TypeScript", "level": "Senior", "years": 6 },
+      { "name": "Rust", "level": "Experienced", "years": 3 }
+    ],
+    "frameworks": [
+      { "name": "Django", "level": "Senior" },
+      { "name": "React Native", "level": "Senior" },
+      { "name": "React", "level": "Senior" },
+      { "name": "FastAPI", "level": "Experienced" },
+      { "name": "Flask", "level": "Intermediate" },
+      { "name": "Next.js", "level": "Intermediate" },
+      { "name": "Axum (Rust)", "level": "Experienced" }
+    ],
+    "technologies": [
+      { "name": "AWS", "level": "Intermediate" },
+      { "name": "PostgreSQL", "level": "Senior" },
+      { "name": "MySQL", "level": "Senior" },
+      { "name": "Linux", "level": "Expert" },
+      { "name": "Redis", "level": "Intermediate" },
+      { "name": "Kafka", "level": "Intermediate" },
+      { "name": "RabbitMQ", "level": "Intermediate" },
+      { "name": "Docker", "level": "Intermediate" },
+      { "name": "AWS ECS/EKS", "level": "Comfortable" },
+      { "name": "GraphQL", "level": "Intermediate" },
+      { "name": "WebRTC", "level": "Experienced" },
+      { "name": "Firebase", "level": "Intermediate" },
+      { "name": "Terraform", "level": "Intermediate" },
+      { "name": "CDK", "level": "Intermediate" },
+      { "name": "Web3.js", "level": "Intermediate" },
+      { "name": "LLMs Finetuning", "level": "Intermediate" },
+      { "name": "Ollama", "level": "Experienced" }
+    ],
+    "practices": [
+      "Test-Driven Development (TDD)",
+      "Agile/Scrum",
+      "System Design",
+      "Performance Optimization",
+      "Code Review",
+      "Mentoring",
+      "Microservices Architecture",
+      "Cloud Infrastructure",
+      "CI/CD Pipelines"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Convexity Technologies Limited",
+      "role": "Head of Engineering",
+      "duration": "Aug. 2025 - Present",
+      "type": "Contract",
+      "location": "Nigeria",
+      "highlights": [
+        "Leading engineering department",
+        "Contributing to development of CHATS, cNGN, StableRail, and Scrybit projects",
+        "Working with Python, Rust, Axum, Soroban, Firebase, C, AWS, Django, PostgreSQL, Kafka, Redis"
+      ]
+    },
+    {
+      "company": "FoundryAI",
+      "role": "Senior Software Engineer",
+      "duration": "Apr. 2025 - Aug. 2025",
+      "type": "Contract",
+      "location": "San Francisco Bay Area, US",
+      "highlights": [
+        "Worked on Foundry's Agent Web Engine (AWE) for rendering static sites",
+        "Implemented LinkedIn and Salesforce integration using redis-based pooling system",
+        "Developed Foundry's PyPI package for developer integration",
+        "Technologies: Python, Flask, PostgreSQL, AWS, GCP, Redis"
+      ]
+    },
+    {
+      "company": "MyHives B.V.",
+      "role": "Chief Technology Officer",
+      "duration": "Feb. 2023 - Apr. 2025",
+      "type": "Part Time",
+      "location": "The Hague, Netherlands",
+      "highlights": [
+        "Designed and led development of core services and backend architecture",
+        "Built supporting microservices and full cloud infrastructure using AWS CDK, Terraform, ECS",
+        "Implemented comprehensive network setup including VPCs, load balancing, route tables",
+        "Technologies: Python, Django, AWS, CDK, Microservices, React, React Native, Rust (Axum)"
+      ]
+    },
+    {
+      "company": "Isofy",
+      "role": "Senior Software Engineer",
+      "duration": "Nov. 2023 - Jan. 2025",
+      "location": "South Carolina, United States",
+      "highlights": [
+        "Implemented NAC system and Isofy Portal features",
+        "Built remote NAC reboot, roaming user support, OfficeRND integration",
+        "Technologies: Django, Python, GraphQL, Juniper, Cisco Meraki, React, AWS"
+      ]
+    },
+    {
+      "company": "Zarttech B.V.",
+      "role": "Head of Engineering",
+      "duration": "Jan. 2023 - Nov. 2023",
+      "location": "The Hague, Netherlands",
+      "highlights": [
+        "Provided strategic leadership to engineering team",
+        "Developed critical microservices with hands-on experience",
+        "Defined and implemented robust software architectures",
+        "Led technology stack decisions and code reviews",
+        "Mentored high-performing engineering team",
+        "Technologies: Rust, Python, PostgreSQL, AWS, Axum, Django, NodeJS, Redis"
+      ]
+    },
+    {
+      "company": "Zarttech B.V.",
+      "role": "Technical Lead",
+      "duration": "June 2022 - Jan. 2023",
+      "location": "The Hague, Netherlands",
+      "highlights": [
+        "Conducted code reviews and pull request approvals",
+        "Built communication systems using WebRTC and WebSocket for real-time video conferencing",
+        "Interviewed hundreds of candidates for technical roles",
+        "Trained and mentored apprentices and specialists",
+        "Designed high-level software architectures",
+        "Managed organization's code repositories and cloud services",
+        "83% approval rate for interviewed candidates",
+        "Received Leadership Award"
+      ]
+    },
+    {
+      "company": "Zarttech B.V.",
+      "role": "Lead Mobile Application Developer",
+      "duration": "Sept. 2021 - June 2022",
+      "location": "The Hague, Netherlands",
+      "highlights": [
+        "Built cross-platform mobile applications for iOS and Android",
+        "Upgraded React Native from 0.52 to 0.68",
+        "Built KYC app with face detection and identification",
+        "Configured CI/CD pipelines for automated builds",
+        "Received Rising Star Award and MVP Award",
+        "Technologies: React Native, AWS, Firebase, Azure, Web3.js, Redux"
+      ]
+    },
+    {
+      "company": "AlphatechHub Integrated Services",
+      "role": "Senior Software Engineer",
+      "duration": "March 2021 - Sept. 2021",
+      "location": "Abuja, Nigeria",
+      "highlights": [
+        "Built backend for cryptocurrency mining rigs",
+        "Created, signed, and broadcast Bitcoin and Ether transactions",
+        "Technologies: Django, Channels, React, React Native, Blockchain, Web3"
+      ]
+    },
+    {
+      "company": "Carilo",
+      "role": "FullStack Developer - Python / React Native",
+      "duration": "March 2020 - Feb. 2021",
+      "location": "Lagos, Nigeria",
+      "highlights": [
+        "Created module for broadcasting new bids using Django Channels",
+        "Built mobile application for iOS and Android using React Native",
+        "Implemented product landing page using React"
+      ]
+    },
+    {
+      "company": "Bitpoint Limited",
+      "role": "Senior Software Engineer",
+      "duration": "Feb. 2017 - March 2020",
+      "location": "Yola, Nigeria",
+      "highlights": [
+        "Built multi-tenant SaaS solution for schools in Nigeria",
+        "Scaled product on AWS using ELBs, EC2s, Lambdas",
+        "Trained several junior developers and IT students",
+        "Technologies: Django, Channels, React, WebRTC, Redis, RabbitMQ, AWS"
+      ]
+    },
+    {
+      "company": "Eselynzz Integrated Services",
+      "role": "Senior Backend Developer",
+      "duration": "June 2015 - Jan. 2017",
+      "location": "Abuja, Nigeria",
+      "highlights": [
+        "Worked on Lynzz finance backend",
+        "Managed deployments of multiple release channels",
+        "Configured networking and load balancers for scaling",
+        "Mentored junior developers"
+      ]
+    }
+  ],
+  "achievements": [
+    "Built scalable systems serving thousands of users",
+    "Mentored 50+ junior developers throughout career",
+    "Active contributor to Python Programming Language (Cpython)",
+    "Led multiple high-impact projects from conception to deployment",
+    "Improved system performance by up to 60% through optimization",
+    "Established best practices and coding standards across teams",
+    "Leadership Award from Zarttech (Aug 2022)",
+    "Most Valuable Person (MVP) Award from Zarttech (Jul 2022)",
+    "Rising Star Award - Best newcomer with most impact"
+  ],
+  "education": [
+    {
+      "degree": "B.Tech in Information Technology",
+      "institution": "Modibbo Adama University of Technology, Yola"
+    },
+    {
+      "degree": "Diploma in Information Technology",
+      "institution": "Modibbo Adama University of Technology, Yola"
+    }
+  ],
+  "certifications": [
+    "Unconscious Bias - National Association of State Boards of Accountancy (NASBA)",
+    "Foundations of User Experience"
+  ],
+  "availability": {
+    "status": "Open to opportunities",
+    "types": ["Full-time", "Contract", "Consulting", "Part-time"],
+    "remotePreference": "Remote or Hybrid"
+  }
+}
