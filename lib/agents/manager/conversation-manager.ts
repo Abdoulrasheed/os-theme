@@ -36,8 +36,11 @@ export async function processConversation(
 ): Promise<ProcessedConversation> {
   const startTime = Date.now();
 
-  const summary = await generateConversationSummary(messages, toolsCalled);
-  const score = await scoreConversation(messages, toolsCalled);
+  // Run summary and scoring in parallel to save time
+  const [summary, score] = await Promise.all([
+    generateConversationSummary(messages, toolsCalled),
+    scoreConversation(messages, toolsCalled),
+  ]);
 
   let emailSent = false;
   if (recipientEmail) {
@@ -76,8 +79,11 @@ export async function getSummaryOnly(
   messages: ConversationMessage[],
   toolsCalled: string[] = []
 ) {
-  const summary = await generateConversationSummary(messages, toolsCalled);
-  const score = await scoreConversation(messages, toolsCalled);
+  // Run both AI calls in parallel
+  const [summary, score] = await Promise.all([
+    generateConversationSummary(messages, toolsCalled),
+    scoreConversation(messages, toolsCalled),
+  ]);
 
   return {
     ...summary,
