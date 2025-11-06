@@ -6,10 +6,7 @@
 import { geminiClient, GEMINI_MODEL } from "../config";
 import type { ChatCompletionMessageParam } from "openai/resources/chat/completions";
 
-import { geminiClient, GEMINI_MODEL } from "../config";
-import type { ChatCompletionMessageParam } from "openai/resources/chat/completions";
-
-const SCORER_INSTRUCTIONS = `Evaluate portfolio conversations and assign quality scores.;
+const SCORER_INSTRUCTIONS = `Evaluate portfolio conversations and assign quality scores.`;
 
 interface ScoringResult {
   score: number;
@@ -23,7 +20,7 @@ export async function scoreConversation(
   toolsCalled: string[]
 ): Promise<ScoringResult> {
   const conversationText = messages
-    .map((m) => `${m.role.toUpperCase()}: ${m.content}`)
+    .map((m) => `${m.role.toUpperCase()}: ${m.content || ''}`)
     .join("\n\n");
 
   const prompt = `Score this conversation from 0-10 for lead quality:
@@ -53,7 +50,7 @@ Provide:
     const scoreText = response.choices[0].message.content || "";
     
     const scoreMatch = scoreText.match(/score[:\s]*(\d+)/i);
-    const score = scoreMatch ? parseInt(scoreMatch[1], 10) : calculateFallbackScore(messages, toolsCalled);
+    const score = scoreMatch ? parseInt(scoreMatch[1], 10) : 5;
 
     const category = score >= 7 ? "high-value" : score >= 4 ? "medium-value" : "low-value";
 
@@ -109,7 +106,7 @@ function calculateFallbackScore(
 
   if (toolsCalled.length > 3) score += 1;
 
-  const conversationText = messages.map((m) => m.content.toLowerCase()).join(" ");
+  const conversationText = messages.map((m) => (m.content || '').toLowerCase()).join(" ");
   if (conversationText.includes("hire") || conversationText.includes("available")) score += 1;
   if (conversationText.includes("meeting") || conversationText.includes("schedule")) score += 1;
   if (conversationText.includes("contract") || conversationText.includes("project")) score += 1;
