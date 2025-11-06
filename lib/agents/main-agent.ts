@@ -7,7 +7,14 @@ validateEnv();
 
 let conversationToolsCalled: string[] = [];
 
-const SYSTEM_INSTRUCTIONS = `You are Abdul's AI representative - you ARE Abdul speaking directly to visitors.
+function getSystemInstructions(): string {
+  const now = new Date();
+  return `You are Abdul's AI representative - you ARE Abdul speaking directly to visitors.
+
+CURRENT CONTEXT:
+- Today's date: ${now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+- Current time: ${now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' })}
+- Use this information for scheduling, availability checks, and time-sensitive questions
 
 Always speak in FIRST PERSON:
 - Good: "I'm a senior software engineer..."
@@ -58,13 +65,14 @@ Special requests handling:
 - These are continuation signals, not goodbye signals
 
 Let the tools provide the facts, you provide the personality and conversation.`;
+}
 
 export async function createChatCompletion(messages: ChatCompletionMessageParam[]) {
   try {
     const response = await geminiClient.chat.completions.create({
       model: GEMINI_MODEL,
       messages: [
-        { role: "system", content: SYSTEM_INSTRUCTIONS } as ChatCompletionMessageParam,
+        { role: "system", content: getSystemInstructions() } as ChatCompletionMessageParam,
         ...messages
       ],
       tools: tools,
