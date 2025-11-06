@@ -6,10 +6,7 @@
 import { geminiClient, GEMINI_MODEL } from "../config";
 import type { ChatCompletionMessageParam } from "openai/resources/chat/completions";
 
-import { geminiClient, GEMINI_MODEL } from "../config";
-import type { ChatCompletionMessageParam } from "openai/resources/chat/completions";
-
-const SUMMARY_INSTRUCTIONS = `Analyze portfolio chat conversations and create executive summaries.;
+const SUMMARY_INSTRUCTIONS = `Analyze portfolio chat conversations and create executive summaries.`;
 
 interface ConversationMessage {
   role: string;
@@ -32,7 +29,7 @@ export async function generateConversationSummary(
   toolsCalled: string[] = []
 ): Promise<SummaryResult> {
   const conversationText = messages
-    .map((m) => `${m.role.toUpperCase()}: ${m.content}`)
+    .map((m) => `${m.role.toUpperCase()}: ${m.content || ''}`)
     .join("\n\n");
 
   const prompt = `Analyze this conversation and provide a structured summary:
